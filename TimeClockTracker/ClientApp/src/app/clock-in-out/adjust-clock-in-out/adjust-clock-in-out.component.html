@@ -1,0 +1,39 @@
+<p>adjust-clock-in-out works!</p>
+
+<form [formGroup]="adjustTimePunchForm" (ngSubmit)="onSubmit()">
+    <div>
+        <div>
+            <div class="form-group">
+
+                <input type="text" class="form-control" formControlName="id" id="id" hidden />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="userId">User Id</label>
+            <input type="text" class="form-control" formControlName="userId" id="userId" disabled />
+        </div>
+        <div class="form-group">
+            <label for="userName">User Name</label>
+            <input type="text" class="form-control" formControlName="userName" id="userName" disabled />
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 col-xs-4 col-sm-4">
+                <div class="form-group">
+                    <label for="clockIn">Clock In</label>
+                    <input type="text" class="form-control" formControlName="clockIn" id="clockIn" />
+                </div>
+            </div>
+            <div class="col-md-4 col-xs-4 col-sm-4">
+                <div class="form-group">
+                    <label for="clockOut">Clock Out</label>
+                    <input type="text" class="form-control" formControlName="clockOut" id="clockOut" />
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-success" type="submit">Update</button>
+        <button class="btn btn-default" [routerLink]="['/fetch-data']">Cancel</button>
+    </div>
+    
+</form>

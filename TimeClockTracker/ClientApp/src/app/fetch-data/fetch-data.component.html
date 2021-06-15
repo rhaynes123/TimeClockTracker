@@ -1,0 +1,27 @@
+<h1 id="tableLabel">Time Entries</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!timepunches"><em>Loading...</em></p>
+
+
+<button class="btn btn-primary" (click)="clockInOut">Clock In Out</button>
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="timepunches">
+
+    <thead>
+        <tr>
+            <th>Employee ID</th>
+            <th>Username</th>
+            <th>Clock In</th>
+            <th>Clock Out</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let punches of timepunches">
+            <td>{{ punches.userId }}</td>
+            <td>{{ punches.userName }}</td>
+            <td>{{ punches.clockIn }}</td>
+            <td>{{ punches.clockOut }}</td>
+        </tr>
+    </tbody>
+</table>
